@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six Guys</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+    <script src="js.js"></script>
+</head>
+
+
+
+
+<body>
+
+    <div id="header_png">
+        <div id="header_vc">
+            <h1 id="tittle">SIX GUYS</h1>
+        </div>
+    </div>
+
+    <div id="recibo">
+        <h3>Recibo:</h3>
+        <h5 id="primero_price"></h5>
+        <h5 id="segundo"></h5>
+        <h5 id="bebida"></h5>
+        <h5 id="postre"></h5>
+    </div>
+
+
+    <section id="primero">
+        <h2 id="h2-margin">PRIMER PLATO</h2>
+
+        <dialog id="popup">
+            <h2>HAMBURGUESA</h2>
+            <p>ifnqabnqioegqebnfgiqenfgipqengifqniogqnio</p>
+        </dialog>
+
+
+        <div id="platos" class="container">
+            <div id="prin_1" class="card" style="width: 18rem;">
+                <img id="hamburgesa" src="./img/hamburgesa.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <button id="open-popup" type="button"> <img class="info" src="./img/info.png"></button>
+                    <h5 class="card-title">HAMBURGUESA</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" onclick="seleccion('hamburgesa')" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+
+            <div id="prin_2" class="card" style="width: 18rem;">
+                <img id="lasaña" src="./img/lasaña.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <button id="open-popup" type="button"> <img class="info" src="./img/info.png"></button>
+                    <h5 class="card-title">LASAÑA</h5>
+                    <p class="card-text"> Láminas con capas de ingredientes al
+                        gusto, más frecuentemente carne en salsa boloñesa y bechamel</p>
+                    <a href="#" onclick="seleccion('lasaña')" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+            <div id="prin_3" class="card" style="width: 18rem;">
+                <img id="fideos" src="./img/fideos.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <button id="open-popup" type="button"> <img class="info" src="./img/info.png"></button>
+                    <h5 class="card-title">CHOW MEIN</h5>
+                    <p class="card-text">Plato basado en un tipo de pasta salteada, de los cuales existen cientos de
+                        variantes</p>
+                    <a href="#" onclick="seleccion('fideos')" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+            <div id="prin_4" class="card" style="width: 18rem;">
+                <img id="galets" src="./img/galets.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <button id="open-popup" type="button"> <img class="info" src="./img/info.png"></button>
+                    <h5 class="card-title">SOPA DE GALETS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</p>
+                    <a href="#" onclick="seleccion('galets')" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+    <section id="guarnicion">
+
+        <hr id="linea" class="w-100 clearfix d-md" />
+
+        <h2>GUARNICION</h2>
+
+        <div id="platos" class="container">
+
+            <div id="guar_1" class="card" style="width: 18rem;">
+                <img src="./img/tiras.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">TIRAS DE POLLO</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" onclick="" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+
+            <div id="guar_2" class="card" style="width: 18rem;">
+                <img src="./img/deluxe.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">PATATAS DELUXE</h5>
+                    <p class="card-text"> Láminas con capas de ingredientes al
+                        gusto, más frecuentemente carne en salsa boloñesa y bechamel</p>
+                    <a href="#" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+            <div id="guar_3" class="card" style="width: 18rem;">
+                <img src="./img/ensalada.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">ENSALADA</h5>
+                    <p class="card-text">Plato basado en un tipo de pasta salteada, de los cuales existen cientos de
+                        variantes</p>
+                    <a href="#" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+            <div id="guar_4" class="card" style="width: 18rem;">
+                <img src="./img/patatas.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">PATATAS FRITAS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</p>
+                    <a href="#" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="segundo">
+
+        <hr id="linea" class="w-100 clearfix d-md" />
+
+        <h2>SEGUNDO PLATO</h2>
+
+        <div id="platos" class="container">
+
+            <div id="seg_1" class="card" style="width: 18rem;">
+                <img src="./img/hamburgesa.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">HAMBURGUESA</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" onclick="" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+
+            <div id="seg_2" class=" card" style="width: 18rem;">
+                <img src="./img/lasaña.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">LASAÑA</h5>
+                    <p class="card-text"> Láminas con capas de ingredientes al
+                        gusto, más frecuentemente carne en salsa boloñesa y bechamel</p>
+                    <a href="#" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+            <div id="seg_3" class="card" style="width: 18rem;">
+                <img src="./img/fideos.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">CHOW MEIN</h5>
+                    <p class="card-text">Plato basado en un tipo de pasta salteada, de los cuales existen cientos de
+                        variantes</p>
+                    <a href="#" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+            <div id="seg_4" class="card" style="width: 18rem;">
+                <img src="./img/galets.jpg" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">SOPA DE GALETS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</p>
+                    <a href="#" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+    <section class="bebida"></section>
+    <section class="postre"></section>
+
+
+</body>
+
+
+
+
+
+</html>
