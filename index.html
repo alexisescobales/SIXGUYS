@@ -49,19 +49,25 @@
 
 
         <div id="platos" class="container">
-            <div id="prin_1" class="card" style="width: 18rem;">
-                <img id="hamburgesa" src="./img/hamburgesa.jpg" class="card-img-top" height="200px">
-                <div class="card-body">
-                    <button id="open-popup-hamburguesa" class="button-popup" type="button"> <img class="info" src="./img/info.png"></button>
-                    <h5 class="card-title">HAMBURGUESA</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" onclick="seleccion('hamburgesa')" class="btn btn-danger">SELECCIONAR</a>
-                </div>
-            </div>
+
+            <plato-template name="HAMBURGUESA" src_plato="./img/hamburgesa.jpg"
+                description="Hamburguesa de queso y jamon de 2 pisos">
+            </plato-template>
+
+            <plato-template name="LASAÑA" src_plato="./img/lasaña.jpg"
+                description="Hamburguesa de queso y jamon de 2 pisos">
+            </plato-template>
+
+            <plato-template name="CHOW MEIN" src_plato="./img/fideos.jpg"
+                description="Hamburguesa de queso y jamon de 2 pisos">
+            </plato-template>
+
+            <plato-template name="SOPA DE GALETS" src_plato="./img/galets.jpg"
+                description="Hamburguesa de queso y jamon de 2 pisos">
+            </plato-template>
 
 
-            <div id="prin_2" class="card" style="width: 18rem;">
+            <!-- <div id="prin_2" class="card" style="width: 18rem;">
                 <img id="lasaña" src="./img/lasaña.jpg" class="card-img-top" height="200px">
                 <div class="card-body">
                     <button id="open-popup-lasaña" type="button"> <img class="info" src="./img/info.png"></button>
@@ -93,7 +99,7 @@
                         card's content.</p>
                     <a href="#" onclick="seleccion('galets')" class="btn btn-danger">SELECCIONAR</a>
                 </div>
-            </div>
+            </div> -->
 
 
 

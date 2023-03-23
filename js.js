@@ -1,14 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
 
-    // class plato extends HTMLElement{
-    //     constructor() {
-    //         super();
-    //     }
-    // }
-
-    // connectedCallback(){}
-
-    // window.customElements.define("plato-plantilla", plato);
 
     let open_popup_hamburguesa = document.getElementById("open-popup-hamburguesa");
     let open_popup_lasaña = document.getElementById("open-popup-lasaña");
@@ -25,6 +16,49 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+class plato extends HTMLElement {
+    constructor() {
+        super();
+        this.name;
+        this.src_plato;
+        this.description;
+    }
+
+    static get observedAttributes() {
+        return ['name', "src_plato", "description"];
+    }
+
+    attributeChangedCallback(nameAttr, oldValue, newValue) {
+        switch (nameAttr) {
+            case "name":
+                this.name = newValue;
+                break;
+            case "src_plato":
+                this.src_plato = newValue;
+                break;
+            case "description":
+                this.description = newValue;
+                break;
+        }
+    }
+
+    connectedCallback() {
+        this.innerHTML = `
+            <div id="prin_1" class="card" style="width: 18rem;">
+                <img id="hamburgesa" src="${this.src_plato}" class="card-img-top" height="200px">
+                <div class="card-body">
+                    <button id="open-popup-hamburguesa" class="button-popup" type="button"> <img class="info" src="./img/info.png"></button>
+                    <h5 class="card-title">${this.name}</h5>
+                    <p class="card-text">${this.description}</p>
+                    <a href="#" onclick="seleccion('hamburgesa')" class="btn btn-danger">SELECCIONAR</a>
+                </div>
+            </div>
+            `;
+    }
+}
+
+window.customElements.define("plato-template", plato);
 
 
 
