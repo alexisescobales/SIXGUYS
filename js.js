@@ -1,22 +1,29 @@
 window.addEventListener("DOMContentLoaded", () => {
-    let abrir_popup = document.getElementById("open-popup");
+
+    // class plato extends HTMLElement{
+    //     constructor() {
+    //         super();
+    //     }
+    // }
+
+    // connectedCallback(){}
+
+    // window.customElements.define("plato-plantilla", plato);
+
+    let open_popup_hamburguesa = document.getElementById("open-popup-hamburguesa");
+    let open_popup_lasaña = document.getElementById("open-popup-lasaña");
+    let close_popup = document.getElementById("close-popup");
     let popup = document.getElementById("popup");
-    abrir_popup.addEventListener("click", () => {
+    open_popup_lasaña.addEventListener("click", () => {
         popup.showModal();
     });
+    open_popup_hamburguesa.addEventListener("click", () => {
+        popup.showModal();
+    });
+    close_popup.addEventListener("click", () => {
+        popup.close();
+    });
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
