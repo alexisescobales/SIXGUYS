@@ -19,92 +19,85 @@
 
 <body>
 
+    <!-- HEADER -->
     <div id="header_png">
         <div id="header_vc">
             <h1 id="tittle">SIX GUYS</h1>
         </div>
     </div>
+    <!-- HEADER -->
 
+    <!-- RECIBO STICKY -->
     <div id="recibo">
-        <h3>Recibo:</h3>
+        <h3 id="recibo_valor"></h3>
+        <hr id="linea" class="w-100 clearfix d-md" />
         <h5 id="primero_price"></h5>
         <h5 id="segundo"></h5>
         <h5 id="bebida"></h5>
         <h5 id="postre"></h5>
     </div>
+    <!-- RECIBO STICKY -->
 
 
+    <!-- PIMERO -->
     <section id="primero">
         <h2 id="h2-margin">PRIMER PLATO</h2>
 
-        <dialog id="popup">
-            <button id="close-popup" type="button"> <img class="info" src="./img/close.png"></button>
-            <h2>HAMBURGUESA</h2>
-            <h3>Ingredientes:</h3>
-            <p>-Pan</p>
-            <p>-Queso</p>
-            <p>-Carne</p>
-            <p>-Bacon</p>
-        </dialog>
+        <!-- POPUPS -->
 
+        <!-- POPUP HAMBURGESA -->
+        <popup-template popup_id="popup-hamburguesa" close_id="close-hamburguesa" titulo="HAMBURGESA" ingr_1="Pan"
+            ingr_2="Queso" ingr_3="Carne" ingr_4="-Bacon"></popup-template>
+        <!-- POPUP HAMBURGESA -->
 
+        <!-- POPUP LASAÑA -->
+        <popup-template popup_id="popup-lasaña" close_id="close-lasaña" titulo="LASAÑA" ingr_1="Lasssssa" ingr_2="polo"
+            ingr_3="assssa" ingr_4="vssssv"></popup-template>
+        <!-- POPUP LASAÑA -->
+
+        <!-- POPUP FIDEOS -->
+        <popup-template popup_id="popup-fideos" close_id="close-fideos" titulo="FIDEOS" ingr_1="Lasa" ingr_2="polo"
+            ingr_3="aa" ingr_4="vv"></popup-template>
+        <!-- POPUP FIDEOS -->
+
+        <!-- POPUP GALETS -->
+        <popup-template popup_id="popup-galets" close_id="close-galets" titulo="GALETS" ingr_1="Lasa" ingr_2="polo"
+            ingr_3="aa" ingr_4="vv"></popup-template>
+        <!-- POPUP GALETS -->
+
+        <!-- POPUPS -->
+
+        <!-- PLATOS -->
         <div id="platos" class="container">
 
-            <plato-template name="HAMBURGUESA" src_plato="./img/hamburgesa.jpg"
-                description="Hamburguesa de queso y jamon de 2 pisos">
+            <!-- PLATO HAMBURGUESA -->
+            <plato-template open_popup_id="open-popup-hamburguesa" name_id="hamburguesa" name="HAMBURGUESA"
+                src_plato="./img/hamburgesa.jpg" description="Hamburguesa de queso y jamon de 2 pisos">
             </plato-template>
+            <!-- PLATO HAMBURGUESA -->
 
-            <plato-template name="LASAÑA" src_plato="./img/lasaña.jpg"
-                description="Hamburguesa de queso y jamon de 2 pisos">
+            <!-- PLATO LASAÑA -->
+            <plato-template open_popup_id="open-popup-lasaña" name_id="lasaña" name="LASAÑA"
+                src_plato="./img/lasaña.jpg" description="LASAÑALASAÑALASAÑALASAÑA">
             </plato-template>
+            <!-- PLATO LASAÑA -->
 
-            <plato-template name="CHOW MEIN" src_plato="./img/fideos.jpg"
-                description="Hamburguesa de queso y jamon de 2 pisos">
+            <!-- PLATO FIDEOS -->
+            <plato-template open_popup_id="open-popup-fideos" name_id="fideos" name="CHOW MEIN"
+                src_plato="./img/fideos.jpg" description="fideosfideosfideosfideos">
             </plato-template>
+            <!-- PLATO FIDEOS -->
 
-            <plato-template name="SOPA DE GALETS" src_plato="./img/galets.jpg"
-                description="Hamburguesa de queso y jamon de 2 pisos">
+            <!-- PLATO GALETS -->
+            <plato-template open_popup_id="open-popup-galets" name_id="galets" name="SOPA DE GALETS"
+                src_plato="./img/galets.jpg" description="Galets galets galets">
             </plato-template>
-
-
-            <!-- <div id="prin_2" class="card" style="width: 18rem;">
-                <img id="lasaña" src="./img/lasaña.jpg" class="card-img-top" height="200px">
-                <div class="card-body">
-                    <button id="open-popup-lasaña" type="button"> <img class="info" src="./img/info.png"></button>
-                    <h5 class="card-title">LASAÑA</h5>
-                    <p class="card-text"> Láminas con capas de ingredientes al
-                        gusto, más frecuentemente carne en salsa boloñesa y bechamel</p>
-                    <a href="#" onclick="seleccion('lasaña')" class="btn btn-danger">SELECCIONAR</a>
-                </div>
-            </div>
-
-            <div id="prin_3" class="card" style="width: 18rem;">
-                <img id="fideos" src="./img/fideos.jpg" class="card-img-top" height="200px">
-                <div class="card-body">
-                    <button id="open-popup" type="button"> <img class="info" src="./img/info.png"></button>
-                    <h5 class="card-title">CHOW MEIN</h5>
-                    <p class="card-text">Plato basado en un tipo de pasta salteada, de los cuales existen cientos de
-                        variantes</p>
-                    <a href="#" onclick="seleccion('fideos')" class="btn btn-danger">SELECCIONAR</a>
-                </div>
-            </div>
-
-            <div id="prin_4" class="card" style="width: 18rem;">
-                <img id="galets" src="./img/galets.jpg" class="card-img-top" height="200px">
-                <div class="card-body">
-                    <button id="open-popup" type="button"> <img class="info" src="./img/info.png"></button>
-                    <h5 class="card-title">SOPA DE GALETS</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <a href="#" onclick="seleccion('galets')" class="btn btn-danger">SELECCIONAR</a>
-                </div>
-            </div> -->
-
-
+            <!-- PLATO GALETS -->
 
         </div>
+        <!-- PLATOS -->
     </section>
+    <!-- PIMERO -->
 
 
 

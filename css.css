@@ -79,24 +79,19 @@ h2 {
     width: 33px;
 }
 
-#popup {
+.popup {
     height: 300px;
+    width: 320px;
     text-align: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
 }
 
-#popup::backdrop {
+.popup::backdrop {
     background-color: rgba(0, 0, 0, .55);
 }
 
-#open-popup {
-    background-color: #ffffff;
-    position: relative;
-    height: 22px;
-    width: 22px;
-}
-
-#close-popup {
+.close-popup {
     background-color: #ffffff;
     position: relative;
     float: right;
