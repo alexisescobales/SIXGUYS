@@ -1,64 +1,91 @@
 //VALOR DEL RECIBO
 let recibo = 0;
 
+//PRECIOS FINALES DE CADA PLATO
+let primero_final;
+let guarnicion_final;
+
 //PRECIOS PRIMER PLATO
-const hamburguesa = 9;
+const hamburguesa = 10;
 const lasaña = 11;
 const fideos = 10;
 const galets = 12;
+
+//PRECIOS GUARNICION
+const tiras = 9;
+const deluxe = 7;
+const ensalada = 8;
+const fritas = 6;
 
 window.addEventListener("DOMContentLoaded", () => {
 
 
 
     //BOTONES DE LLAMDA A POPUPS
+
+    //PRIMERO
     let open_popup_hamburguesa = document.getElementById("open-popup-hamburguesa");
     let open_popup_lasaña = document.getElementById("open-popup-lasaña");
     let open_popup_fideos = document.getElementById("open-popup-fideos");
     let open_popup_galets = document.getElementById("open-popup-galets");
 
+    //GUARNICION
+    let open_popup_tiras = document.getElementById("open-popup-tiras");
+    let open_popup_deluxe = document.getElementById("open-popup-deluxe");
+    let open_popup_ensalada = document.getElementById("open-popup-ensalada");
+    let open_popup_fritas = document.getElementById("open-popup-fritas");
+
+
+
     //BOTONES DE CERRADA A POPUPS
+
+    //PRIMERO
     let close_popup_hamburguesa = document.getElementById("close-hamburguesa");
     let close_popup_lasaña = document.getElementById("close-lasaña");
     let close_popup_fideos = document.getElementById("close-fideos");
     let close_popup_galets = document.getElementById("close-galets");
 
+    //GUARNICION
+    let close_popup_tiras = document.getElementById("close-tiras");
+    let close_popup_deluxe = document.getElementById("close-deluxe");
+    let close_popup_ensalada = document.getElementById("close-ensalada");
+    let close_popup_fritas = document.getElementById("close-fritas");
+
     //POPUPS
+
+    //PRIMERO
     let popup_hamburguesa = document.getElementById("popup-hamburguesa");
     let popup_lasaña = document.getElementById("popup-lasaña");
     let popup_fideos = document.getElementById("popup-fideos");
     let popup_galets = document.getElementById("popup-galets");
 
-    open_popup_hamburguesa.addEventListener("click", () => {
-        popup_hamburguesa.showModal();
-    });
-    close_popup_hamburguesa.addEventListener("click", () => {
-        popup_hamburguesa.close();
-    });
+    //GUARNICION
+    let popup_tiras = document.getElementById("popup-tiras");
+    let popup_deluxe = document.getElementById("popup-deluxe");
+    let popup_ensalada = document.getElementById("popup-ensalada");
+    let popup_fritas = document.getElementById("popup-fritas");
 
+    //FUNCION PARA LLAMAR Y CERRAR POPUPS
+    function popup_open(button_open, button_close, popup) {
+        button_open.addEventListener("click", () => {
+            popup.showModal();
+        });
+        button_close.addEventListener("click", () => {
+            popup.close();
+        });
+    }
 
-    open_popup_lasaña.addEventListener("click", () => {
-        popup_lasaña.showModal();
-    });
-    close_popup_lasaña.addEventListener("click", () => {
-        popup_lasaña.close();
-    });
+    //POPUPS PRIMERO
+    popup_open(open_popup_hamburguesa, close_popup_hamburguesa, popup_hamburguesa);
+    popup_open(open_popup_lasaña, close_popup_lasaña, popup_lasaña);
+    popup_open(open_popup_fideos, close_popup_fideos, popup_fideos);
+    popup_open(open_popup_galets, close_popup_galets, popup_galets);
 
-
-    open_popup_fideos.addEventListener("click", () => {
-        popup_fideos.showModal();
-    });
-    close_popup_fideos.addEventListener("click", () => {
-        popup_fideos.close();
-    });
-
-    open_popup_galets.addEventListener("click", () => {
-        popup_galets.showModal();
-    });
-    close_popup_galets.addEventListener("click", () => {
-        popup_galets.close();
-    });
-
+    //POPUPS PRIMERO
+    popup_open(open_popup_tiras, close_popup_tiras, popup_tiras);
+    popup_open(open_popup_deluxe, close_popup_deluxe, popup_deluxe);
+    popup_open(open_popup_ensalada, close_popup_ensalada, popup_ensalada);
+    popup_open(open_popup_fritas, close_popup_fritas, popup_fritas);
 
 });
 
@@ -73,6 +100,14 @@ function seleccion(sel) {
     let fideos_img = document.getElementById("fideos");
     let galets_img = document.getElementById("galets");
 
+    //IMAGENES DEL PRIMERO//
+    let tiras_img = document.getElementById("tiras");
+    let deluxe_img = document.getElementById("deluxe");
+    let ensalada_img = document.getElementById("ensalada");
+    let fritas_img = document.getElementById("fritas");
+
+
+
     //FUNCION PARA OSCURECER IMAGENES 
     function oscurecer(img1, img2, img3, img_remove) {
         img1.classList.add('oscurecer');
@@ -83,32 +118,65 @@ function seleccion(sel) {
 
     //RECIBO Y SUS TEXTOS//
     let primero = document.getElementById("primero_price");
+    let guarnicion = document.getElementById("guarnicion");
 
 
+    //VALORES PRIMERO
     if (sel == "hamburguesa") {
-        //SUMA EL PRECIO AL RECIBO
-        recibo = hamburguesa;
-        //ACTUALIZA EL VALOR TOTAL DEL RECIBO
-        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        //INGRESA EL PLATO ELEGIDO JUNTO SU PRECIO
-        primero.innerText = 'Hamburguesa-->' + hamburguesa + '$';
-        //OSCURECE LAS IMAGENES MENOS LA SELECCIONADA
-        oscurecer(lasaña_img, fideos_img, galets_img, hamburguesa_img);
+        primero_final = hamburguesa;
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$"; //ACTUALIZA EL VALOR TOTAL DEL RECIBO
+        primero.innerText = 'Hamburguesa-->' + hamburguesa + '$'; //INGRESA EL PLATO ELEGIDO JUNTO SU PRECIO
+        oscurecer(lasaña_img, fideos_img, galets_img, hamburguesa_img); //OSCURECE LAS IMAGENES MENOS LA SELECCIONADA
+        elegido = true;
     } else if ((sel == "lasaña")) {
-        recibo = lasaña;
+        primero_final = lasaña;
+        recibo = primero_final + guarnicion;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        primero.innerText = 'Lasaña-->'+lasaña+'$';
+        primero.innerText = 'Lasaña-->' + lasaña + '$';
         oscurecer(hamburguesa_img, fideos_img, galets_img, lasaña_img);
+        elegido = true;
     } else if ((sel == "fideos")) {
-        recibo = fideos;
+        primero_final = fideos;
+        recibo = primero_final + guarnicion;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        primero.innerText = 'Fideos-->'+fideos+'$';
+        primero.innerText = 'Fideos-->' + fideos + '$';
         oscurecer(hamburguesa_img, lasaña_img, galets_img, fideos_img);
+        elegido = true;
     } else if ((sel == "galets")) {
-        recibo = galets;
+        primero_final = galets;
+        recibo = galets + guarnicion;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        primero.innerText = 'Galets-->'+galets+'$';
+        primero.innerText = 'Galets-->' + galets + '$';
         oscurecer(hamburguesa_img, fideos_img, lasaña_img, galets_img);
+        elegido = true;
+    }
+
+
+    //VALORES PRIMERO
+    if (sel == "tiras") {
+        guarnicion_final = tiras;
+        recibo = primero_final + guarnicion_final;
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        guarnicion.innerText = 'Tiras De Pollo-->' + tiras + '$';
+        oscurecer(deluxe_img, ensalada_img, fritas_img, tiras_img);
+    } else if ((sel == "deluxe")) {
+        guarnicion_final = deluxe;
+        recibo = primero_final + guarnicion_final;
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        guarnicion.innerText = 'Patatas Deluxe-->' + deluxe + '$';
+        oscurecer(tiras_img, ensalada_img, fritas_img, deluxe_img);
+    } else if ((sel == "ensalada")) {
+        guarnicion_final = ensalada;
+        recibo = primero_final + guarnicion_final;
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        guarnicion.innerText = 'Ensalada-->' + ensalada + '$';
+        oscurecer(tiras_img, deluxe_img, fritas_img, ensalada_img);
+    } else if ((sel == "fritas")) {
+        guarnicion_final = fritas;
+        recibo = primero_final + guarnicion_final;
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        guarnicion.innerText = 'Patatas Fritas-->' + fritas + '$';
+        oscurecer(ensalada_img, deluxe_img, tiras_img, fritas_img);
     }
 
 };
@@ -156,7 +224,7 @@ class plato extends HTMLElement {
                     <button id="${this.open_popup_id}" class="button-popup" type="button"> <img class="info" src="./img/info.png"></button>
                     <h5 class="card-title">${this.name}</h5>
                     <p class="card-text">${this.description}</p>
-                    <a href="#" onclick="seleccion('${this.name_id}')" class="btn btn-danger">SELECCIONAR</a>
+                    <a onclick="seleccion('${this.name_id}')" class="btn btn-danger">SELECCIONAR</a>
                 </div>
             </div>
             `;
