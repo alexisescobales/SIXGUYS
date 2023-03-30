@@ -4,6 +4,7 @@ let recibo = 0;
 //PRECIOS FINALES DE CADA PLATO
 let primero_final;
 let guarnicion_final;
+let bebida_final;
 
 //PRECIOS PRIMER PLATO
 const hamburguesa = 10;
@@ -16,6 +17,13 @@ const tiras = 9;
 const deluxe = 7;
 const ensalada = 8;
 const fritas = 6;
+
+//PRECIOS BEBIDA
+const cocacola = 2.5;
+const nestea = 2;
+const agua = 1.50;
+const fanta = 2;
+
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -35,6 +43,12 @@ window.addEventListener("DOMContentLoaded", () => {
     let open_popup_ensalada = document.getElementById("open-popup-ensalada");
     let open_popup_fritas = document.getElementById("open-popup-fritas");
 
+    //GUARNICION
+    let open_popup_cocacola = document.getElementById("open-popup-cocacola");
+    let open_popup_nestea = document.getElementById("open-popup-nestea");
+    let open_popup_agua = document.getElementById("open-popup-agua");
+    let open_popup_fanta = document.getElementById("open-popup-fanta");
+
 
 
     //BOTONES DE CERRADA A POPUPS
@@ -51,6 +65,12 @@ window.addEventListener("DOMContentLoaded", () => {
     let close_popup_ensalada = document.getElementById("close-ensalada");
     let close_popup_fritas = document.getElementById("close-fritas");
 
+    //BEBIDA
+    let close_popup_cocacola = document.getElementById("close-cocacola");
+    let close_popup_nestea = document.getElementById("close-nestea");
+    let close_popup_agua = document.getElementById("close-agua");
+    let close_popup_fanta = document.getElementById("close-fanta");
+
     //POPUPS
 
     //PRIMERO
@@ -64,6 +84,12 @@ window.addEventListener("DOMContentLoaded", () => {
     let popup_deluxe = document.getElementById("popup-deluxe");
     let popup_ensalada = document.getElementById("popup-ensalada");
     let popup_fritas = document.getElementById("popup-fritas");
+
+    //BEBIDA
+    let popup_cocacola = document.getElementById("popup-cocacola");
+    let popup_nestea = document.getElementById("popup-nestea");
+    let popup_agua = document.getElementById("popup-agua");
+    let popup_fanta = document.getElementById("popup-fanta");
 
     //FUNCION PARA LLAMAR Y CERRAR POPUPS
     function popup_open(button_open, button_close, popup) {
@@ -81,18 +107,22 @@ window.addEventListener("DOMContentLoaded", () => {
     popup_open(open_popup_fideos, close_popup_fideos, popup_fideos);
     popup_open(open_popup_galets, close_popup_galets, popup_galets);
 
-    //POPUPS PRIMERO
+    //POPUPS GUARNICION
     popup_open(open_popup_tiras, close_popup_tiras, popup_tiras);
     popup_open(open_popup_deluxe, close_popup_deluxe, popup_deluxe);
     popup_open(open_popup_ensalada, close_popup_ensalada, popup_ensalada);
     popup_open(open_popup_fritas, close_popup_fritas, popup_fritas);
 
+    //POPUPS BEBIDA
+    popup_open(open_popup_cocacola, close_popup_cocacola, popup_cocacola);
+    popup_open(open_popup_nestea, close_popup_nestea, popup_nestea);
+    popup_open(open_popup_agua, close_popup_agua, popup_agua);
+    popup_open(open_popup_fanta, close_popup_fanta, popup_fanta);
+
 });
 
 
 function seleccion(sel) {
-
-    let elegido = false;
 
     //IMAGENES DEL PRIMERO//
     let hamburguesa_img = document.getElementById("hamburguesa");
@@ -106,6 +136,13 @@ function seleccion(sel) {
     let ensalada_img = document.getElementById("ensalada");
     let fritas_img = document.getElementById("fritas");
 
+    //IMAGENES DE BEBIDA//
+    let cocacola_img = document.getElementById("cocacola");
+    let nestea_img = document.getElementById("nestea");
+    let agua_img = document.getElementById("agua");
+    let fanta_img = document.getElementById("fanta");
+
+
 
 
     //FUNCION PARA OSCURECER IMAGENES 
@@ -117,68 +154,84 @@ function seleccion(sel) {
     }
 
     //RECIBO Y SUS TEXTOS//
-    let primero = document.getElementById("primero_price");
-    let guarnicion = document.getElementById("guarnicion");
-
+    let primero_texto = document.getElementById("primero_price");
+    let guarnicion_texto = document.getElementById("guarnicion");
+    let bebida_texto = document.getElementById("bebida");
 
     //VALORES PRIMERO
     if (sel == "hamburguesa") {
         primero_final = hamburguesa;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$"; //ACTUALIZA EL VALOR TOTAL DEL RECIBO
-        primero.innerText = 'Hamburguesa-->' + hamburguesa + '$'; //INGRESA EL PLATO ELEGIDO JUNTO SU PRECIO
+        primero_texto.innerText = 'Hamburguesa-->' + primero_final + '$'; //INGRESA EL PLATO ELEGIDO JUNTO SU PRECIO
         oscurecer(lasaña_img, fideos_img, galets_img, hamburguesa_img); //OSCURECE LAS IMAGENES MENOS LA SELECCIONADA
-        elegido = true;
     } else if ((sel == "lasaña")) {
         primero_final = lasaña;
-        recibo = primero_final + guarnicion;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        primero.innerText = 'Lasaña-->' + lasaña + '$';
+        primero_texto.innerText = 'Lasaña-->' + primero_final + '$';
         oscurecer(hamburguesa_img, fideos_img, galets_img, lasaña_img);
-        elegido = true;
     } else if ((sel == "fideos")) {
         primero_final = fideos;
-        recibo = primero_final + guarnicion;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        primero.innerText = 'Fideos-->' + fideos + '$';
+        primero_texto.innerText = 'Fideos-->' + primero_final + '$';
         oscurecer(hamburguesa_img, lasaña_img, galets_img, fideos_img);
-        elegido = true;
     } else if ((sel == "galets")) {
         primero_final = galets;
-        recibo = galets + guarnicion;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        primero.innerText = 'Galets-->' + galets + '$';
+        primero_texto.innerText = 'Galets-->' + primero_final + '$';
         oscurecer(hamburguesa_img, fideos_img, lasaña_img, galets_img);
-        elegido = true;
     }
 
 
-    //VALORES PRIMERO
+    //VALORES GUARNICION
     if (sel == "tiras") {
         guarnicion_final = tiras;
         recibo = primero_final + guarnicion_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        guarnicion.innerText = 'Tiras De Pollo-->' + tiras + '$';
+        guarnicion_texto.innerText = 'Tiras De Pollo-->' + tiras + '$';
         oscurecer(deluxe_img, ensalada_img, fritas_img, tiras_img);
     } else if ((sel == "deluxe")) {
         guarnicion_final = deluxe;
         recibo = primero_final + guarnicion_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        guarnicion.innerText = 'Patatas Deluxe-->' + deluxe + '$';
+        guarnicion_texto.innerText = 'Patatas Deluxe-->' + deluxe + '$';
         oscurecer(tiras_img, ensalada_img, fritas_img, deluxe_img);
     } else if ((sel == "ensalada")) {
         guarnicion_final = ensalada;
         recibo = primero_final + guarnicion_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        guarnicion.innerText = 'Ensalada-->' + ensalada + '$';
+        guarnicion_texto.innerText = 'Ensalada-->' + ensalada + '$';
         oscurecer(tiras_img, deluxe_img, fritas_img, ensalada_img);
     } else if ((sel == "fritas")) {
         guarnicion_final = fritas;
         recibo = primero_final + guarnicion_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        guarnicion.innerText = 'Patatas Fritas-->' + fritas + '$';
+        guarnicion_texto.innerText = 'Patatas Fritas-->' + fritas + '$';
         oscurecer(ensalada_img, deluxe_img, tiras_img, fritas_img);
     }
 
+    //VALORES BEBIDA
+    if (sel == "cocacola") {
+        guarnicion_final = cocacola;
+        recibo = primero_final + guarnicion_final + bebida_final;
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        bebida_texto.innerText = 'Cocacola-->' + cocacola + '$';
+        oscurecer(nestea_img, agua_img, fanta_img, cocacola_img);
+    } else if ((sel == "nestea")) {
+        guarnicion_final = nestea;
+        recibo = primero_final + guarnicion_final + bebida_final;
+        bebida_texto.innerText = 'Nestea-->' + nestea + '$';
+        oscurecer(cocacola_img, agua_img, fanta_img, nestea_img);
+    } else if ((sel == "agua")) {
+        guarnicion_final = agua;
+        recibo = primero_final + guarnicion_final + bebida_final;
+        bebida_texto.innerText = 'Agua-->' + agua + '$';
+        oscurecer(cocacola_img, nestea_img, fanta_img, agua_img);
+    } else if ((sel == "fanta")) {
+        bebida_final = fanta;
+        recibo = primero_final + guarnicion_final + bebida_final;
+        bebida_texto.innerText = 'Fanta-->' + fanta + '$';
+        oscurecer(cocacola_img, nestea_img, agua_img, fanta_img);
+    }
 };
 
 

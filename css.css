@@ -77,14 +77,18 @@ h2 {
 .button-popup {
     height: 28px;
     width: 33px;
+    border: 0;
+    background-color: #ffffff;
 }
 
 .popup {
     height: 300px;
     width: 320px;
     text-align: center;
+    padding-bottom: 350px;
     background-color: rgb(255, 255, 255);
     overflow: hidden;
+    border: 0;
 }
 
 .popup::backdrop {
@@ -95,14 +99,15 @@ h2 {
     background-color: #ffffff;
     position: relative;
     float: right;
-    top: -18px;
-    right: -2px;
+    top: -12px;
+    right: -6px;
     height: 22px;
     width: 22px;
+    border: 0;
 }
 
 #h2-margin {
-    margin-left: 250px;
+    margin-left: 210px;
 }
 
 #platos {

@@ -105,7 +105,7 @@
 
         <hr id="linea" class="w-100 clearfix d-md" />
 
-        <h2 id="h2-margin">GUARNICION</h2>
+        <h2>GUARNICION</h2>
 
         <!-- POPUPS -->
 
@@ -115,17 +115,17 @@
         <!-- POPUP HAMBURGESA -->
 
         <!-- POPUP LASAÑA -->
-        <popup-template popup_id="popup-lasaña" close_id="close-lasaña" titulo="LASAÑA" ingr_1="Lasssssa" ingr_2="polo"
+        <popup-template popup_id="popup-deluxe" close_id="close-deluxe" titulo="DELUXE" ingr_1="Lasssssa" ingr_2="polo"
             ingr_3="assssa" ingr_4="vssssv"></popup-template>
         <!-- POPUP LASAÑA -->
 
         <!-- POPUP FIDEOS -->
-        <popup-template popup_id="popup-fideos" close_id="close-fideos" titulo="FIDEOS" ingr_1="Lasa" ingr_2="polo"
-            ingr_3="aa" ingr_4="vv"></popup-template>
+        <popup-template popup_id="popup-ensalada" close_id="close-ensalada" titulo="ENSALADA" ingr_1="Lasa"
+            ingr_2="polo" ingr_3="aa" ingr_4="vv"></popup-template>
         <!-- POPUP FIDEOS -->
 
         <!-- POPUP GALETS -->
-        <popup-template popup_id="popup-galets" close_id="close-galets" titulo="GALETS" ingr_1="Lasa" ingr_2="polo"
+        <popup-template popup_id="popup-fritas" close_id="close-fritas" titulo="FRITAS" ingr_1="Lasa" ingr_2="polo"
             ingr_3="aa" ingr_4="vv"></popup-template>
         <!-- POPUP GALETS -->
 
@@ -166,82 +166,66 @@
 
 
 
-    <section id="guarnicion">
-
-        <hr id="linea" class="w-100 clearfix d-md" />
-
-        <h2>GUARNICION</h2>
-
-        <div id="platos" class="container">
-
-            <div id="guar_4" class="card" style="width: 18rem;">
-                <img src="./img/patatas.jpg" class="card-img-top" height="200px">
-                <div class="card-body">
-                    <h5 class="card-title">PATATAS FRITAS</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <a href="#" class="btn btn-danger">SELECCIONAR</a>
-                </div>
-            </div>
-
-
-        </div>
-    </section>
-
     <section id="bebida">
 
         <hr id="linea" class="w-100 clearfix d-md" />
 
         <h2>BEBIDA</h2>
 
+        <!-- POPUPS -->
+
+        <!-- POPUP HAMBURGESA -->
+        <popup-template popup_id="popup-cocacola" close_id="close-cocacola" titulo="COCACOLA" ingr_1="Pan"
+            ingr_2="Queso" ingr_3="Carne" ingr_4="Extra: BBQ Sauce"></popup-template>
+        <!-- POPUP HAMBURGESA -->
+
+        <!-- POPUP LASAÑA -->
+        <popup-template popup_id="popup-nestea" close_id="close-nestea" titulo="NESTEA" ingr_1="Lasssssa" ingr_2="polo"
+            ingr_3="assssa" ingr_4="vssssv"></popup-template>
+        <!-- POPUP LASAÑA -->
+
+        <!-- POPUP FIDEOS -->
+        <popup-template popup_id="popup-agua" close_id="close-agua" titulo="AGUA" ingr_1="Lasa"
+            ingr_2="polo" ingr_3="aa" ingr_4="vv"></popup-template>
+        <!-- POPUP FIDEOS -->
+
+        <!-- POPUP GALETS -->
+        <popup-template popup_id="popup-fanta" close_id="close-fanta" titulo="FANTA" ingr_1="Lasa" ingr_2="polo"
+            ingr_3="aa" ingr_4="vv"></popup-template>
+        <!-- POPUP GALETS -->
+
+        <!-- POPUPS -->
+
         <div id="platos" class="container">
 
-            <div id="seg_1" class="card" style="width: 18rem;">
-                <img src="./img/hamburgesa.jpg" class="card-img-top" height="200px">
-                <div class="card-body">
-                    <h5 class="card-title">HAMBURGUESA</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" onclick="" class="btn btn-danger">SELECCIONAR</a>
-                </div>
-            </div>
+            <!-- PLATO HAMBURGUESA -->
+            <plato-template open_popup_id="open-popup-cocacola" name_id="cocacola" name="COCACOLA"
+                src_plato="./img/cocacola.jpeg" description="">
+            </plato-template>
+            <!-- PLATO HAMBURGUESA -->
 
+            <!-- PLATO LASAÑA -->
+            <plato-template open_popup_id="open-popup-nestea" name_id="nestea" name="NESTEA"
+                src_plato="./img/nestea.png" description="">
+            </plato-template>
+            <!-- PLATO LASAÑA -->
 
-            <div id="seg_2" class=" card" style="width: 18rem;">
-                <img src="./img/lasaña.jpg" class="card-img-top" height="200px">
-                <div class="card-body">
-                    <h5 class="card-title">LASAÑA</h5>
-                    <p class="card-text"> Láminas con capas de ingredientes al
-                        gusto, más frecuentemente carne en salsa boloñesa y bechamel</p>
-                    <a href="#" class="btn btn-danger">SELECCIONAR</a>
-                </div>
-            </div>
+            <!-- PLATO FIDEOS -->
+            <plato-template open_popup_id="open-popup-agua" name_id="agua" name="AGUA" src_plato="./img/agua.png"
+                description="">
+            </plato-template>
+            <!-- PLATO FIDEOS -->
 
-            <div id="seg_3" class="card" style="width: 18rem;">
-                <img src="./img/fideos.jpg" class="card-img-top" height="200px">
-                <div class="card-body">
-                    <h5 class="card-title">CHOW MEIN</h5>
-                    <p class="card-text">Plato basado en un tipo de pasta salteada, de los cuales existen cientos de
-                        variantes</p>
-                    <a href="#" class="btn btn-danger">SELECCIONAR</a>
-                </div>
-            </div>
-
-            <div id="seg_4" class="card" style="width: 18rem;">
-                <img src="./img/galets.jpg" class="card-img-top" height="200px">
-                <div class="card-body">
-                    <h5 class="card-title">SOPA DE GALETS</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <a href="#" class="btn btn-danger">SELECCIONAR</a>
-                </div>
-            </div>
-
+            <!-- PLATO GALETS -->
+            <plato-template open_popup_id="open-popup-fanta" name_id="fanta" name="FANTA" src_plato="./img/fanta.png"
+                description="">
+            </plato-template>
+            <!-- PLATO GALETS -->
 
         </div>
     </section>
+
+
 
     <section class="postre">
         <hr id="linea" class="w-100 clearfix d-md" />
