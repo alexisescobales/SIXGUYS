@@ -5,6 +5,7 @@ let recibo = 0;
 let primero_final;
 let guarnicion_final;
 let bebida_final;
+let postre_final;
 
 //PRECIOS PRIMER PLATO
 const hamburguesa = 10;
@@ -24,13 +25,16 @@ const nestea = 2;
 const agua = 1.50;
 const fanta = 2;
 
+//PRECIOS POSTRE   
+const crema = 6;
+const contesa = 7;
+const flan = 4;
+const brownie = 5;
+
 
 window.addEventListener("DOMContentLoaded", () => {
 
-
-
     //BOTONES DE LLAMDA A POPUPS
-
     //PRIMERO
     let open_popup_hamburguesa = document.getElementById("open-popup-hamburguesa");
     let open_popup_lasaña = document.getElementById("open-popup-lasaña");
@@ -48,6 +52,12 @@ window.addEventListener("DOMContentLoaded", () => {
     let open_popup_nestea = document.getElementById("open-popup-nestea");
     let open_popup_agua = document.getElementById("open-popup-agua");
     let open_popup_fanta = document.getElementById("open-popup-fanta");
+
+    //POSTRE
+    let open_popup_crema = document.getElementById("open-popup-crema");
+    let open_popup_contesa = document.getElementById("open-popup-contesa");
+    let open_popup_flan = document.getElementById("open-popup-flan");
+    let open_popup_brownie = document.getElementById("open-popup-brownie");
 
 
 
@@ -71,6 +81,12 @@ window.addEventListener("DOMContentLoaded", () => {
     let close_popup_agua = document.getElementById("close-agua");
     let close_popup_fanta = document.getElementById("close-fanta");
 
+    //POSTRE
+    let close_popup_crema = document.getElementById("close-crema");
+    let close_popup_contesa = document.getElementById("close-contesa");
+    let close_popup_flan = document.getElementById("close-flan");
+    let close_popup_brownie = document.getElementById("close-brownie");
+
     //POPUPS
 
     //PRIMERO
@@ -90,6 +106,12 @@ window.addEventListener("DOMContentLoaded", () => {
     let popup_nestea = document.getElementById("popup-nestea");
     let popup_agua = document.getElementById("popup-agua");
     let popup_fanta = document.getElementById("popup-fanta");
+
+    //POSTRE
+    let popup_crema = document.getElementById("popup-crema");
+    let popup_contesa = document.getElementById("popup-contesa");
+    let popup_flan = document.getElementById("popup-flan");
+    let popup_brownie = document.getElementById("popup-brownie");
 
     //FUNCION PARA LLAMAR Y CERRAR POPUPS
     function popup_open(button_open, button_close, popup) {
@@ -119,6 +141,12 @@ window.addEventListener("DOMContentLoaded", () => {
     popup_open(open_popup_agua, close_popup_agua, popup_agua);
     popup_open(open_popup_fanta, close_popup_fanta, popup_fanta);
 
+    //POPUPS POSTRE
+    popup_open(open_popup_crema, close_popup_crema, popup_crema);
+    popup_open(open_popup_contesa, close_popup_contesa, popup_contesa);
+    popup_open(open_popup_flan, close_popup_flan, popup_flan);
+    popup_open(open_popup_brownie, close_popup_brownie, popup_brownie);
+
 });
 
 
@@ -142,6 +170,12 @@ function seleccion(sel) {
     let agua_img = document.getElementById("agua");
     let fanta_img = document.getElementById("fanta");
 
+    //IMAGENES DE BEBIDA//
+    let crema_img = document.getElementById("crema");
+    let contesa_img = document.getElementById("contesa");
+    let flan_img = document.getElementById("flan");
+    let brownie_img = document.getElementById("brownie");
+
 
 
 
@@ -157,27 +191,32 @@ function seleccion(sel) {
     let primero_texto = document.getElementById("primero_price");
     let guarnicion_texto = document.getElementById("guarnicion");
     let bebida_texto = document.getElementById("bebida");
+    let postre_texto = document.getElementById("postre");
 
     //VALORES PRIMERO
     if (sel == "hamburguesa") {
         primero_final = hamburguesa;
+        recibo = primero_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$"; //ACTUALIZA EL VALOR TOTAL DEL RECIBO
         primero_texto.innerText = 'Hamburguesa-->' + primero_final + '$'; //INGRESA EL PLATO ELEGIDO JUNTO SU PRECIO
         oscurecer(lasaña_img, fideos_img, galets_img, hamburguesa_img); //OSCURECE LAS IMAGENES MENOS LA SELECCIONADA
     } else if ((sel == "lasaña")) {
         primero_final = lasaña;
+        recibo = primero_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        primero_texto.innerText = 'Lasaña-->' + primero_final + '$';
+        primero_texto.innerText = 'Lasaña---------->' + primero_final + '$';
         oscurecer(hamburguesa_img, fideos_img, galets_img, lasaña_img);
     } else if ((sel == "fideos")) {
         primero_final = fideos;
+        recibo = primero_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        primero_texto.innerText = 'Fideos-->' + primero_final + '$';
+        primero_texto.innerText = 'Fideos---------->' + primero_final + '$';
         oscurecer(hamburguesa_img, lasaña_img, galets_img, fideos_img);
     } else if ((sel == "galets")) {
         primero_final = galets;
+        recibo = primero_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        primero_texto.innerText = 'Galets-->' + primero_final + '$';
+        primero_texto.innerText = 'Galets----------->' + primero_final + '$';
         oscurecer(hamburguesa_img, fideos_img, lasaña_img, galets_img);
     }
 
@@ -187,7 +226,7 @@ function seleccion(sel) {
         guarnicion_final = tiras;
         recibo = primero_final + guarnicion_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        guarnicion_texto.innerText = 'Tiras De Pollo-->' + tiras + '$';
+        guarnicion_texto.innerText = 'Tiras De Pollo--->' + tiras + '$';
         oscurecer(deluxe_img, ensalada_img, fritas_img, tiras_img);
     } else if ((sel == "deluxe")) {
         guarnicion_final = deluxe;
@@ -199,38 +238,68 @@ function seleccion(sel) {
         guarnicion_final = ensalada;
         recibo = primero_final + guarnicion_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        guarnicion_texto.innerText = 'Ensalada-->' + ensalada + '$';
+        guarnicion_texto.innerText = 'Ensalada--------->' + ensalada + '$';
         oscurecer(tiras_img, deluxe_img, fritas_img, ensalada_img);
     } else if ((sel == "fritas")) {
         guarnicion_final = fritas;
         recibo = primero_final + guarnicion_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        guarnicion_texto.innerText = 'Patatas Fritas-->' + fritas + '$';
+        guarnicion_texto.innerText = 'Patatas Fritas---->' + fritas + '$';
         oscurecer(ensalada_img, deluxe_img, tiras_img, fritas_img);
     }
 
     //VALORES BEBIDA
     if (sel == "cocacola") {
-        guarnicion_final = cocacola;
+        bebida_final = cocacola;
         recibo = primero_final + guarnicion_final + bebida_final;
         document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
-        bebida_texto.innerText = 'Cocacola-->' + cocacola + '$';
+        bebida_texto.innerText = 'Cocacola------->' + cocacola + '$';
         oscurecer(nestea_img, agua_img, fanta_img, cocacola_img);
     } else if ((sel == "nestea")) {
-        guarnicion_final = nestea;
+        bebida_final = nestea;
         recibo = primero_final + guarnicion_final + bebida_final;
-        bebida_texto.innerText = 'Nestea-->' + nestea + '$';
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        bebida_texto.innerText = 'Nestea----------->' + nestea + '$';
         oscurecer(cocacola_img, agua_img, fanta_img, nestea_img);
     } else if ((sel == "agua")) {
-        guarnicion_final = agua;
+        bebida_final = agua;
         recibo = primero_final + guarnicion_final + bebida_final;
-        bebida_texto.innerText = 'Agua-->' + agua + '$';
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        bebida_texto.innerText = 'Agua----------->' + agua + '$';
         oscurecer(cocacola_img, nestea_img, fanta_img, agua_img);
     } else if ((sel == "fanta")) {
         bebida_final = fanta;
         recibo = primero_final + guarnicion_final + bebida_final;
-        bebida_texto.innerText = 'Fanta-->' + fanta + '$';
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        bebida_texto.innerText = 'Fanta------------->' + fanta + '$';
         oscurecer(cocacola_img, nestea_img, agua_img, fanta_img);
+    }
+
+    //VALORES POSTRE
+    if (sel == "crema") {
+        postre_final = crema;
+        recibo = primero_final + guarnicion_final + bebida_final + postre_final;
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        postre_texto.innerText = 'Crema Catalana->' + crema + '$';
+        oscurecer(contesa_img, flan_img, brownie_img, crema_img);
+    } else if ((sel == "contesa")) {
+        postre_final = contesa;
+        recibo = primero_final + guarnicion_final + bebida_final + postre_final;
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        postre_texto.innerText = 'Contesa---------->' + contesa + '$';
+        oscurecer(crema_img, flan_img, brownie_img, contesa_img);
+    } else if ((sel == "flan")) {
+        postre_final = flan;
+        recibo = primero_final + guarnicion_final + bebida_final + postre_final;
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        postre_texto.innerText = 'Flan-------------->' + flan + '$';
+        oscurecer(crema_img, brownie_img, contesa_img, flan_img);
+    } else if ((sel == "brownie")) {
+        postre_final = brownie;
+        recibo = primero_final + guarnicion_final + bebida_final + postre_final;
+        document.getElementById('recibo_valor').innerHTML = "Total: " + recibo + "$";
+        postre_texto.innerText = 'Brownie--------->' + brownie + '$';
+        oscurecer(contesa_img, flan_img, crema_img, brownie_img);
     }
 };
 
